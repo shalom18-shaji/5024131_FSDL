@@ -1,88 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <center><!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>BJP Governments in India</title>
-    <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            font-family: Arial, sans-serif;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BJP Governments in India</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+    body {
+        margin: 0;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #ffecd2, #fcb69f);
+        font-family: 'DM Sans', sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 40px;
+    }
+
+    .container {
+        background: rgba(255, 255, 255, 0.75);
+        backdrop-filter: blur(10px);
+        border-radius: 18px;
+        padding: 30px;
+        width: 90%;
+        max-width: 1000px;
+        box-shadow: 0 25px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 25px;
+        font-size: 28px;
+        font-weight: 700;
+        color: #2d2d2d;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        border-radius: 12px;
+        overflow: hidden;
+    }
+
+    th {
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        color: white;
+        padding: 14px;
+        font-size: 15px;
+        text-align: left;
+    }
+
+    td {
+        padding: 14px;
+        font-size: 14px;
+        color: #333;
+        background-color: rgba(255, 255, 255, 0.85);
+    }
+
+    tr:nth-child(even) td {
+        background-color: rgba(245, 245, 245, 0.9);
+    }
+
+    tr:hover td {
+        background-color: #f0e6ff;
+        transition: 0.3s ease;
+    }
+
+    @media (max-width: 768px) {
+        h2 {
+            font-size: 22px;
         }
+
         th, td {
-            border: 1px solid #000;
+            font-size: 13px;
             padding: 10px;
-            text-align: left;
         }
-        th {
-            background-color: #f2f2f2;
-        }
-    </style>
+    }
+</style>
 </head>
-<body style="background-color: #FFA500;">
 
-<h2>BJP Governments at the Centre (India)</h2>
+<body>
 
-<table style="background-color: white;">
-    <thead>
-        <tr>
-            <th>No.</th>
-            <th>Period / Term</th>
-            <th>Government Formed by BJP / BJP-led NDA</th>
-            <th>Type of Government</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>1</td>
-            <td>1996 (May – June)</td>
-            <td>BJP under Atal Bihari Vajpayee – lasted ~13 days</td>
-            <td>Short coalition (no majority)</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>1998 – 1999</td>
-            <td>BJP-led NDA (Vajpayee)</td>
-            <td>Coalition government</td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>1999 – 2004</td>
-            <td>BJP-led NDA full term (Vajpayee)</td>
-            <td>Majority coalition</td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td>2014 – 2019</td>
-            <td>BJP-led NDA (Narendra Modi)</td>
-            <td>Majority government</td>
-        </tr>
-        <tr>
-            <td>5</td>
-            <td>2019 – 2024</td>
-            <td>BJP-led NDA (Narendra Modi)</td>
-            <td>Majority government</td>
-        </tr>
-        <tr>
-            <td>6</td>
-            <td>2024 – Present (2026)</td>
-            <td>BJP-led NDA (Narendra Modi) continues</td>
-            <td>Coalition government (majority with allies)</td>
-        </tr>
-    </tbody>
-</table>
+<div class="container">
+    <h2>BJP Governments at the Centre (India)</h2>
 
-</body>
-</html>
+    <table>
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>Period / Term</th>
+                <th>Government</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>1996 (May–June)</td>
+                <td>BJP – Atal Bihari Vajpayee</td>
+                <td>Short-term (13 days)</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>1998–1999</td>
+                <td>BJP-led NDA (Vajpayee)</td>
+                <td>Coalition</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>1999–2004</td>
+                <td>BJP-led NDA (Vajpayee)</td>
+                <td>Majority coalition</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>2014–2019</td>
+                <td>BJP-led NDA (Narendra Modi)</td>
+                <td>Majority</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>2019–2024</td>
+                <td>BJP-led NDA (Narendra Modi)</td>
+                <td>Majority</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>2024–Present</td>
+                <td>BJP-led NDA (Narendra Modi)</td>
+                <td>Coalition</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
-</center>
 </body>
 </html>
