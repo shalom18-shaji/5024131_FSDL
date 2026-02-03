@@ -5,73 +5,115 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BJP Governments in India</title>
 
-<!-- Google Font -->
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
     body {
         margin: 0;
         min-height: 100vh;
-        background: linear-gradient(135deg, #ffecd2, #fcb69f);
-        font-family: 'DM Sans', sans-serif;
+       background: linear-gradient(135deg, #667eea, #764ba2);
+
+
+
+
+        font-family: 'Poppins', sans-serif;
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 40px;
+        padding: 40px 15px;
     }
 
     .container {
-        background: rgba(255, 255, 255, 0.75);
-        backdrop-filter: blur(10px);
-        border-radius: 18px;
-        padding: 30px;
-        width: 90%;
-        max-width: 1000px;
-        box-shadow: 0 25px 40px rgba(0, 0, 0, 0.15);
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(12px);
+        border-radius: 22px;
+        padding: 35px;
+        width: 100%;
+        max-width: 1100px;
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+        border: 1px solid rgba(255,255,255,0.4);
     }
 
-    h2 {
+    .header {
         text-align: center;
-        margin-bottom: 25px;
-        font-size: 28px;
+        margin-bottom: 30px;
+    }
+
+    .header h1 {
+        margin: 0;
+        font-size: 32px;
         font-weight: 700;
-        color: #2d2d2d;
+        color: #2c2c2c;
+    }
+
+    .header p {
+        margin-top: 8px;
+        font-size: 15px;
+        color: #555;
+        letter-spacing: 0.5px;
     }
 
     table {
         width: 100%;
         border-collapse: collapse;
-        border-radius: 12px;
+        border-radius: 16px;
         overflow: hidden;
     }
 
     th {
-        background: linear-gradient(135deg, #667eea, #764ba2);
-        color: white;
-        padding: 14px;
-        font-size: 15px;
-        text-align: left;
+        background: linear-gradient(135deg, #4f46e5, #9333ea);
+        color: #fff;
+        padding: 16px;
+        font-size: 14px;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
     }
 
     td {
-        padding: 14px;
+        padding: 15px;
         font-size: 14px;
         color: #333;
-        background-color: rgba(255, 255, 255, 0.85);
+        background-color: rgba(255,255,255,0.9);
+        vertical-align: middle;
     }
 
     tr:nth-child(even) td {
-        background-color: rgba(245, 245, 245, 0.9);
+        background-color: rgba(245,245,245,0.95);
     }
 
     tr:hover td {
-        background-color: #f0e6ff;
-        transition: 0.3s ease;
+        background-color: #f3e8ff;
+        transform: scale(1.01);
+        transition: all 0.25s ease;
+    }
+
+    .badge {
+        padding: 6px 12px;
+        border-radius: 999px;
+        font-size: 12px;
+        font-weight: 600;
+        display: inline-block;
+    }
+
+    .short {
+        background-color: #fee2e2;
+        color: #b91c1c;
+    }
+
+    .coalition {
+        background-color: #fef3c7;
+        color: #92400e;
+    }
+
+    .majority {
+        background-color: #dcfce7;
+        color: #166534;
     }
 
     @media (max-width: 768px) {
-        h2 {
-            font-size: 22px;
+        .header h1 {
+            font-size: 24px;
         }
 
         th, td {
@@ -85,56 +127,61 @@
 <body>
 
 <div class="container">
-    <h2>BJP Governments at the Centre (India)</h2>
+
+    <div class="header">
+        <h1>BJP Governments at the Centre</h1>
+        <p>Chronological overview of BJP-led governments in India</p>
+    </div>
 
     <table>
         <thead>
             <tr>
                 <th>No.</th>
-                <th>Period / Term</th>
+                <th>Period</th>
                 <th>Government</th>
-                <th>Type</th>
+                <th>Nature</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>1</td>
                 <td>1996 (May–June)</td>
-                <td>BJP – Atal Bihari Vajpayee</td>
-                <td>Short-term (13 days)</td>
+                <td>Atal Bihari Vajpayee (BJP)</td>
+                <td><span class="badge short">13 Days</span></td>
             </tr>
             <tr>
                 <td>2</td>
                 <td>1998–1999</td>
                 <td>BJP-led NDA (Vajpayee)</td>
-                <td>Coalition</td>
+                <td><span class="badge coalition">Coalition</span></td>
             </tr>
             <tr>
                 <td>3</td>
                 <td>1999–2004</td>
                 <td>BJP-led NDA (Vajpayee)</td>
-                <td>Majority coalition</td>
+                <td><span class="badge majority">Majority Coalition</span></td>
             </tr>
             <tr>
                 <td>4</td>
                 <td>2014–2019</td>
                 <td>BJP-led NDA (Narendra Modi)</td>
-                <td>Majority</td>
+                <td><span class="badge majority">Majority</span></td>
             </tr>
             <tr>
                 <td>5</td>
                 <td>2019–2024</td>
                 <td>BJP-led NDA (Narendra Modi)</td>
-                <td>Majority</td>
+                <td><span class="badge majority">Majority</span></td>
             </tr>
             <tr>
                 <td>6</td>
                 <td>2024–Present</td>
                 <td>BJP-led NDA (Narendra Modi)</td>
-                <td>Coalition</td>
+                <td><span class="badge coalition">Coalition</span></td>
             </tr>
         </tbody>
     </table>
+
 </div>
 
 </body>
