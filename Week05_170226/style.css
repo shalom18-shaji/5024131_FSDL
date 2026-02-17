@@ -1,22 +1,30 @@
 body {
-  margin: 0;
-  font-family: Arial;
-  background: linear-gradient(135deg, #e10600, #000);
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+
+    background:
+        linear-gradient(rgba(0, 60, 30, 0.85), rgba(0, 0, 0, 0.9)),
+        url("https://images.unsplash.com/photo-1602872029708-84f3bcdbe88f");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    color: white;
+    backdrop-filter: blur(2px);
 }
 
 .container {
-  background: rgba(0,0,0,0.85);
+  background: rgba(0, 0, 0, 0.9);
   padding: 40px;
   border-radius: 15px;
-  width: 800px;
-  display: flex;
-  justify-content: space-between;
-  box-shadow: 0 0 30px rgba(225,6,0,0.6);
+  width: 420px;
+  box-shadow: 0 0 30px rgba(225, 6, 0, 0.6);
 }
 
 h1 {
@@ -39,15 +47,76 @@ input {
 }
 
 button {
-  width: 100%;
-  padding: 12px;
-  background: #e10600;
-  border: none;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
+    background: #00b140;
+    color: white;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
 }
 
 button:hover {
-  background: #ff1e1e;
+    background: #008c34;
+   box-shadow: 0 0 30px rgba(0, 177, 64, 0.6);
 }
+
+.hidden {
+  display: none;
+}
+
+.switch-text {
+  margin-top: 15px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.switch-text span {
+  color: #e10600;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.switch-text span:hover {
+  text-decoration: underline;
+}
+
+.email-box {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.email-box input {
+  flex: 1;
+  border: none;
+  padding: 12px;
+  outline: none;
+}
+
+.email-box span {
+  padding: 12px;
+  background: #eee;
+  color: #333;
+  font-size: 14px;
+}
+
+
+.form-box input,
+.form-box select {
+    width: 100%;
+    max-width: 300px;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 6px;
+    border: none;
+}
+
+.form-box button {
+    width: 100%;
+    max-width: 300px;
+}
+
+
+

@@ -1,33 +1,64 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <title>F1 Ticket Portal</title>
-  <link rel="stylesheet" href="style.css">
+    <title>F1 Ticket Portal</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-
 <div class="container">
-  <h1>F1 Ticket Booking Portal</h1>
+    <h1>F1 Ticket Booking Portal</h1>
 
-  <div class="form-box">
-    <h2>Register</h2>
-    <input type="text" id="regName" placeholder="Full Name">
-    <input type="email" id="regEmail" placeholder="Email">
-    <input type="password" id="regPassword" placeholder="Password">
-    <input type="date" id="regDate">
-    <button onclick="register()">Register</button>
-    <p id="regMessage"></p>
-  </div>
+    <!-- REGISTER FORM -->
+    <div class="form-box" id="registerBox">
+        <h2>Register</h2>
 
-  <div class="form-box">
-    <h2>Login</h2>
-    <input type="email" id="loginEmail" placeholder="Email">
-    <input type="password" id="loginPassword" placeholder="Password">
-    <button onclick="login()">Login</button>
-    <p id="loginMessage"></p>
-  </div>
+        <input type="text" id="regName" placeholder="Full Name">
+
+        <div class="email-box">
+            <input type="text" id="regEmail" placeholder="Enter Gmail Username">
+            <span>@gmail.com</span>
+        </div>
+
+        <input type="password" id="regPassword" placeholder="Password">
+        <input type="date" id="regDate">
+
+        <select id="ticketType">
+            <option value="">Select Ticket Type</option>
+            <option>General Admission</option>
+            <option>Grandstand</option>
+            <option>Paddock Club</option>
+        </select>
+
+        <input type="number" id="ticketCount" placeholder="Number of Tickets" min="1">
+
+        <button onclick="register()">Register</button>
+        <p id="regMessage"></p>
+
+        <p class="switch-text">
+            Already registered?
+            <span onclick="showLogin()">Sign In</span>
+        </p>
+    </div>
+
+    <!-- LOGIN FORM -->
+    <div class="form-box hidden" id="loginBox">
+        <h2>Login</h2>
+
+        <input type="email" id="loginEmail" placeholder="Email">
+        <input type="password" id="loginPassword" placeholder="Password">
+
+        <button onclick="login()">Login</button>
+        <p id="loginMessage"></p>
+
+        <p class="switch-text">
+            New user?
+            <span onclick="showRegister()">Register Here</span>
+        </p>
+    </div>
 </div>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>
