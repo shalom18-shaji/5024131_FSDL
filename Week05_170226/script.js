@@ -29,6 +29,7 @@ function register() {
       throw "Booking date cannot be in the past!";
     }
 
+    
     // Store user in array
     let user = {
       name: name.toUpperCase(), // string method

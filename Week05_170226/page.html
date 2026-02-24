@@ -18,17 +18,18 @@
 
         <div class="email-box">
             <input type="text" id="regEmail" placeholder="Enter Gmail Username">
-            <span>@gmail.com</span>
+            
         </div>
 
         <input type="password" id="regPassword" placeholder="Password">
         <input type="date" id="regDate">
 
         <select id="ticketType">
-            <option value="">Select Ticket Type</option>
-            <option>General Admission</option>
-            <option>Grandstand</option>
-            <option>Paddock Club</option>
+    <option value="">Select Ticket Type</option>
+    <option value="regular">Regular - ₹2,999</option>
+    <option value="grandstand">Grandstand - ₹6,999</option>
+    <option value="vip">VIP - ₹14,999</option>
+    <option value="paddock">Paddock Club - ₹49,999</option>
         </select>
 
         <input type="number" id="ticketCount" placeholder="Number of Tickets" min="1">
