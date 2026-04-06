@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="iplApp">
+<head>
+    <meta charset="UTF-8">
+    <title>IPL Registration Form</title>
+
+    <!-- AngularJS CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 400px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 50px;
+            box-shadow: 0 0 10px gray;
+        }
+        h2 {
+            text-align: center;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin: 10px 0;
+        }
+        .output {
+            background: #e8f5e9;
+            padding: 10px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body ng-controller="iplController">
+
+<div class="container">
+    <h2>IPL Player Form</h2>
+
+    <!-- Form Inputs -->
+    <label>Player Name:</label>
+    <input type="text" ng-model="player.name" placeholder="Enter name">
+
+    <label>Age:</label>
+    <input type="number" ng-model="player.age" placeholder="Enter age">
+
+    <label>Team:</label>
+    <select ng-model="player.team">
+        <option value="">Select Team</option>
+        <option>MI</option>
+        <option>CSK</option>
+        <option>RCB</option>
+        <option>KKR</option>
+        <option>SRH</option>
+        <option>RR</option>
+        <option>GT</option>
+        <option>LSG</option>
+    </select>
+
+    <label>Role:</label>
+    <select ng-model="player.role">
+        <option value="">Select Role</option>
+        <option>Batsman</option>
+        <option>Bowler</option>
+        <option>All-Rounder</option>
+        <option>Wicket Keeper</option>
+    </select>
+
+    <!-- Output using Expressions -->
+    <div class="output" ng-if="player.name">
+        <h3>Player Details</h3>
+        <p>Name: {{player.name}}</p>
+        <p>Age: {{player.age}}</p>
+        <p>Team: {{player.team}}</p>
+        <p>Role: {{player.role}}</p>
+    </div>
+</div>
+
+<script>
+    var app = angular.module("iplApp", []);
+
+    app.controller("iplController", function($scope) {
+        $scope.player = {};
+    });
+</script>
+
+</body>
+</html>
