@@ -1,150 +1,100 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="iplApp">
+<html lang="en" ng-app="myApp">
 <head>
-<meta charset="UTF-8">
-<title>IPL Form</title>
+  <meta charset="UTF-8">
+  <title>AngularJS Hello World</title>
 
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <!-- AngularJS CDN -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
 
-<style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #667eea, #764ba2);
 
-    background: url('https://images.unsplash.com/photo-1540747913346-19e32dc3e97e') no-repeat center center/cover;
-    height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+    .container {
+      background: white;
+      padding: 40px;
+      width: 420px;
+      border-radius: 15px;
+      box-shadow: 0px 10px 25px rgba(0,0,0,0.2);
+      text-align: center;
+    }
 
-/* Dark overlay */
-body::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.6);
-}
+    input {
+      padding: 10px;
+      width: 90%;
+      margin-top: 15px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
 
-/* Form container */
-.container {
-    position: relative;
-    z-index: 1;
-    width: 380px;
-    padding: 25px;
-    border-radius: 15px;
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      background-color: #667eea;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
 
-    background: rgba(255,255,255,0.92);
-    backdrop-filter: blur(10px);
+    button:hover {
+      background-color: #5a67d8;
+    }
 
-    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-}
+    h2 {
+      margin-bottom: 10px;
+      color: #333;
+    }
 
-h2 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-/* Inputs */
-input, select {
-    width: 100%;
-    padding: 10px;
-    margin: 12px 0;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    transition: 0.3s;
-}
-
-/* Animation on focus */
-input:focus, select:focus {
-    border-color: #ff3c3c;
-    box-shadow: 0 0 8px rgba(255,60,60,0.5);
-    outline: none;
-}
-
-/* Button */
-button {
-    width: 100%;
-    padding: 12px;
-    margin-top: 15px;
-    border: none;
-    border-radius: 8px;
-
-    background: linear-gradient(45deg, #ff416c, #ff4b2b);
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-button:hover {
-    transform: scale(1.05);
-}
-
-/* Output */
-.output {
-    margin-top: 15px;
-    padding: 10px;
-    background: #e8f5e9;
-    border-radius: 6px;
-}
-</style>
+    p {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #555;
+    }
+  </style>
 </head>
 
-<body ng-controller="iplController">
+<body>
 
-<div class="container">
-    <h2>IPL Player Form</h2>
+  <div class="container" ng-controller="MainController">
 
-    <input type="text" ng-model="player.name" placeholder="Player Name">
-    <input type="number" ng-model="player.age" placeholder="Age">
+    <h2>Hello World App</h2>
 
-    <select ng-model="player.team">
-        <option value="">Select Team</option>
-        <option>MI</option>
-        <option>CSK</option>
-        <option>RCB</option>
-        <option>KKR</option>
-        <option>SRH</option>
-        <option>RR</option>
-        <option>GT</option>
-        <option>LSG</option>
-    </select>
+    <!-- ng-model -->
+    <input type="text" ng-model="name" placeholder="Enter your name">
 
-    <select ng-model="player.role">
-        <option value="">Select Role</option>
-        <option>Batsman</option>
-        <option>Bowler</option>
-        <option>All-Rounder</option>
-        <option>Wicket Keeper</option>
-    </select>
+    <!-- button with ng-click -->
+    <br>
+    <button ng-click="clearName()">Clear Name</button>
 
-    <button ng-click="submitForm()">Submit</button>
+    <!-- expression -->
+    <p>Hello, {{name}} 👋</p>
 
-    <!-- Output -->
-    <div class="output" ng-if="submitted">
-        <h3>Player Details</h3>
-        <p>Name: {{player.name}}</p>
-        <p>Age: {{player.age}}</p>
-        <p>Team: {{player.team}}</p>
-        <p>Role: {{player.role}}</p>
-    </div>
-</div>
+  </div>
 
-<script>
-var app = angular.module("iplApp", []);
+  <script>
+    var app = angular.module("myApp", []);
 
-app.controller("iplController", function($scope) {
-    $scope.player = {};
-    $scope.submitted = false;
+    app.controller("MainController", function($scope) {
+      $scope.name = "World";
 
-    $scope.submitForm = function() {
-        $scope.submitted = true;
-    };
-});
-</script>
+      // function for button
+      $scope.clearName = function() {
+        $scope.name = "";
+      };
+    });
+  </script>
 
 </body>
 </html>
