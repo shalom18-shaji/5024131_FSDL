@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>F1 Ticket Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="container">
+    <h1>F1 Ticket Booking Portal</h1>
+
+    <!-- REGISTER FORM -->
+    <div class="form-box" id="registerBox">
+        <h2>Register</h2>
+
+        <input type="text" id="regName" placeholder="Full Name">
+
+        <div class="email-box">
+            <input type="text" id="regEmail" placeholder="Enter Gmail Username">
+            
+        </div>
+
+        <input type="password" id="regPassword" placeholder="Password">
+        <input type="date" id="regDate">
+
+        <select id="ticketType">
+    <option value="">Select Ticket Type</option>
+    <option value="regular">Regular - ₹2,999</option>
+    <option value="grandstand">Grandstand - ₹6,999</option>
+    <option value="vip">VIP - ₹14,999</option>
+    <option value="paddock">Paddock Club - ₹49,999</option>
+        </select>
+
+        <input type="number" id="ticketCount" placeholder="Number of Tickets" min="1">
+
+        <button onclick="register()">Register</button>
+        <p id="regMessage"></p>
+
+        <p class="switch-text">
+            Already registered?
+            <span onclick="showLogin()">Sign In</span>
+        </p>
+    </div>
+
+    <!-- LOGIN FORM -->
+    <div class="form-box hidden" id="loginBox">
+        <h2>Login</h2>
+
+        <input type="email" id="loginEmail" placeholder="Email">
+        <input type="password" id="loginPassword" placeholder="Password">
+
+        <button onclick="login()">Login</button>
+        <p id="loginMessage"></p>
+
+        <p class="switch-text">
+            New user?
+            <span onclick="showRegister()">Register Here</span>
+        </p>
+    </div>
+</div>
+    <script src="script.js"></script>
+</body>
+
+</html>
