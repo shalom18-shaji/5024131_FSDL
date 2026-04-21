@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="studentApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Record App</title>
+
+  <!-- AngularJS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: white;
+      padding: 40px;
+      width: 600px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    input {
+      width: 95%;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 8px;
+      background: #5a67d8;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #434190;
+    }
+
+    .error {
+      color: red;
+      font-size: 13px;
+    }
+
+    table {
+      width: 100%;
+      margin-top: 20px;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: center;
+    }
+
+    th {
+      background: #5a67d8;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container" ng-controller="StudentController">
+
+  <h2>Student Record System</h2>
+
+  <!-- FORM -->
+  <form name="studentForm" ng-submit="addStudent()" novalidate>
+
+    <!-- Name -->
+    <input type="text" name="name" ng-model="student.name" placeholder="Enter Name" required>
+    <div class="error" ng-show="studentForm.name.$touched && studentForm.name.$invalid">
+      Name is required
+    </div>
+
+    <!-- Email -->
+    <input type="email" name="email" ng-model="student.email" placeholder="Enter Email" required>
+    <div class="error" ng-show="studentForm.email.$touched && studentForm.email.$invalid">
+      Valid email required
+    </div>
+
+    <!-- Age -->
+    <input type="number" name="age" ng-model="student.age" placeholder="Enter Age" min="18" max="60" required>
+    <div class="error" ng-show="studentForm.age.$touched && studentForm.age.$invalid">
+      Age must be between 18 and 60
+    </div>
+
+    <button type="submit" ng-disabled="studentForm.$invalid">Add Student</button>
+  </form>
+
+  <!-- TABLE -->
+  <table ng-if="students.length > 0">
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Age</th>
+    </tr>
+
+    <tr ng-repeat="s in students track by $index">
+      <td>{{$index + 1}}</td>
+      <td>{{s.name}}</td>
+      <td>{{s.email}}</td>
+      <td>{{s.age}}</td>
+    </tr>
+  </table>
+
+</div>
+
+<script>
+  var app = angular.module("studentApp", []);
+
+  app.controller("StudentController", function($scope) {
+
+    $scope.students = [];
+
+    // EVENT (ng-submit)
+    $scope.addStudent = function() {
+      if ($scope.studentForm.$valid) {
+        $scope.students.push({
+          name: $scope.student.name,
+          email: $scope.student.email,
+          age: $scope.student.age
+        });
+
+        // clear form
+        $scope.student = {};
+        $scope.studentForm.$setPristine();
+        $scope.studentForm.$setUntouched();
+      }
+    };
+
+  });
+</script>
+
+</body>
+</html>
