@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="UTF-8">
+  <title>AngularJS Hello World</title>
+
+  <!-- AngularJS CDN -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+      /* gradient background */
+      background: linear-gradient(135deg, #89f7fe, #66a6ff);
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .box {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+
+      padding: 60px 50px;
+      width: 500px;
+
+      border-radius: 20px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .box:hover {
+      transform: translateY(-6px) scale(1.02);
+    }
+
+    h2 {
+      margin-bottom: 25px;
+      font-size: 24px;
+      color: #333;
+    }
+
+    input {
+      padding: 14px;
+      width: 92%;
+      margin-top: 15px;
+      border-radius: 12px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      outline: none;
+    }
+
+    input:focus {
+      border: 1px solid #66a6ff;
+    }
+
+    p {
+      margin-top: 25px;
+      font-size: 20px;
+      color: #444;
+    }
+
+    .small-text {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #777;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ng-controller -->
+  <div class="box" ng-controller="MainController">
+
+    <h2>Hello World App</h2>
+
+    <!-- ng-model -->
+    <input type="text" ng-model="name" placeholder="Enter your name">
+
+    <!-- expressions -->
+    <p>Hello, {{name || 'Guest'}} 👋</p>
+    <p class="small-text">{{message}}</p>
+
+  </div>
+
+  <script>
+    var app = angular.module("myApp", []);
+
+    app.controller("MainController", function($scope) {
+      $scope.name = "World";
+
+      var hour = new Date().getHours();
+
+      if (hour < 12) {
+        $scope.message = "Good Morning ☀️";
+      } else if (hour < 18) {
+        $scope.message = "Have a great day 🌤️";
+      } else {
+        $scope.message = "Good Evening 🌙";
+      }
+    });
+  </script>
+
+</body>
+</html>
