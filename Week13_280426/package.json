@@ -1,0 +1,16 @@
+{
+  "name": "week13-nodejs-demo",
+  "version": "1.0.0",
+  "description": "Node.js demo for installation, callbacks, event loop, Express, and MongoDB.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "callbacks": "node src/examples/callbacks.js",
+    "event-loop": "node src/examples/eventLoop.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.3",
+    "mongodb": "^5.9.0"
+  }
+}
